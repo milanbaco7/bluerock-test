@@ -1,4 +1,4 @@
-[BlueRock Logo](https://assets-global.website-files.com/5c860ded219c64010f1b4548/5d3550616b1d5c18152399b0_logo_main_infinite%20scalability.svg)
+![BlueRock Logo](https://assets-global.website-files.com/5c860ded219c64010f1b4548/5d3550616b1d5c18152399b0_logo_main_infinite%20scalability.svg)
 # JS Candidate Challenge
 Congratulations to making this far in the interview process with BlueRock! We are thrilled to have you taking this javascript challenge.
 
