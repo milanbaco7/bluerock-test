@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlueRock - JS Candidate Challenge</title>
   <!-- jQuery preferred, but up to candidate -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="./products.js"></script>
 
   <style>
@@ -19,9 +20,9 @@
     }
 
     #client-list {
-      width: 100%; 
-      height: 30px; 
-      font-size: 16px; 
+      width: 100%;
+      height: 30px;
+      font-size: 16px;
       border: 2px solid lightgray
     }
 
@@ -36,8 +37,8 @@
     }
 
     .product {
-      text-align: center; 
-      height: 100px; 
+      text-align: center;
+      height: 100px;
       flex: 1 1 30%;
       width: 33%;
       /*margin: 0 0 1.5rem 0;*/
@@ -59,7 +60,7 @@
       .product {
         flex: 1 1 100%;
         padding-top: 30px;
-        height: 70px; 
+        height: 70px;
       }
     }
 
@@ -79,9 +80,9 @@
     .external {
       background-color: lightgray;
     }
-
   </style>
 </head>
+
 <body>
   <div style="width: 975px; max-width: calc(100% - 20px); margin: 0 auto;">
     <div class="main-container">
@@ -106,7 +107,24 @@
   </div>
   <script>
     // YOUR CODE HERE...
+
+    //  25/09/2022 - milan bacovic -- added functionality to change css for each client/product
+
+    $("#client-list").change(function () {
+      let client = client_db.find(({ name }) => name === this.value);
+      if (client) {
+        client?.products.forEach(({ name, status }) => {
+          $("div").find(`[data-name='${name}']`).removeClass()
+          $("div").find(`[data-name='${name}']`).addClass('product')
+          $("div").find(`[data-name='${name}']`).addClass(status)
+        })
+      } else {
+        $(".product").removeClass().addClass('product');
+      }
+    });
+
     console.log('client_db', client_db);
   </script>
 </body>
+
 </html>
